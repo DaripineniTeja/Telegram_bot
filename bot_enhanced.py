@@ -471,8 +471,15 @@ from telegram.ext import ApplicationBuilder, CommandHandler
 async def start(update, context):
     await update.message.reply_text("Hello! I’m alive.")
 
+from telegram.ext import ApplicationBuilder, CommandHandler
+from telegram import Update
+from telegram.ext import ContextTypes
+
+async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text("Hello! Bot is working!")
+
 def main():
-    app = ApplicationBuilder().token("YOUR_BOT_TOKEN").build()
+    app = ApplicationBuilder().token("7080911524:AAG_fJiu4n_o99xyD4bi6SIbpXKQtDfGoPw").build()
     app.add_handler(CommandHandler("start", start))
     app.run_polling()
 
