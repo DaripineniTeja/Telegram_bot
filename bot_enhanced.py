@@ -463,8 +463,19 @@ def main():
     print(f"🔧 Total tools loaded: {len(bot.tools_data)}")
     print(f"📊 Categories available: {len(bot.purposes)}")
     print("✅ Bot is running... Press Ctrl+C to stop.")
-    
     application.run_polling(allowed_updates=Update.ALL_TYPES)
 
-if __name__ == '__main__':
-    main()
+from telegram import Update
+from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
+
+async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text("Hello! Bot is working!")
+
+async def main():
+    app = ApplicationBuilder().token("YOUR_BOT_TOKEN_HERE").build()
+    app.add_handler(CommandHandler("start", start))
+    await app.run_polling()
+
+if __name__ == "__main__":
+    import asyncio
+    asyncio.run(main())
