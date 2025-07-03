@@ -1,0 +1,4 @@
+build:
+  env:
+    - name: PYTHON_VERSION
+      value: 3.10
