@@ -1,0 +1,14 @@
+{
+  "name": "telegram-ai-tools-bot",
+  "version": "1.0.0",
+  "description": "A Telegram bot that acts as an AI Tools Board",
+  "main": "main.py",
+  "scripts": {
+    "start": "python main.py",
+    "enhanced": "python bot_enhanced.py",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["telegram", "bot", "ai", "tools", "python"],
+  "author": "",
+  "license": "MIT"
+}
